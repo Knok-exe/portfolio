@@ -1,129 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Austin McDaniel</title>
-  <meta name="description" content="Personal portfolio: projects, home lab and learning notes.">
-  <style>
-    :root {
-      --bg: #0e1116;
-      --card: #161b22;
-      --text: #e6edf3;
-      --muted: #9aa7b4;
-      --accent: #58a6ff;
-      --border: #262d36;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-      line-height: 1.6;
-    }
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .wrap { max-width: 760px; margin: 0 auto; padding: 0 20px; }
-    header { padding: 72px 0 32px; }
-    h1 { font-size: 2.4rem; margin: 0 0 8px; }
-    .tagline { color: var(--muted); font-size: 1.15rem; margin: 0; }
-    nav { margin-top: 24px; display: flex; gap: 20px; flex-wrap: wrap; }
-    section { padding: 32px 0; border-top: 1px solid var(--border); }
-    h2 { font-size: 1.3rem; margin: 0 0 16px; }
-    .grid { display: grid; gap: 16px; }
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 18px 20px;
-    }
-    .card h3 { margin: 0 0 6px; font-size: 1.05rem; }
-    .card p { margin: 0; color: var(--muted); }
-    .tags { margin-top: 10px; display: flex; gap: 8px; flex-wrap: wrap; }
-    .tag {
-      font-size: 0.8rem;
-      color: var(--muted);
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      padding: 2px 10px;
-    }
-    footer { padding: 32px 0 56px; color: var(--muted); font-size: 0.9rem; }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Austin McDaniel — Clinical Informatics &amp; Python</title>
+<meta name="description" content="Austin McDaniel — clinical informatics analyst building Python tools for clinical reporting and homelab infrastructure. All health data shown is synthetic.">
+<style>
+  :root { --ink:#1a2332; --muted:#5b6b7f; --accent:#0e7490; --card:#f4f7fa; --line:#dbe4ec; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; color:var(--ink); line-height:1.55; }
+  header { padding:3rem 1.25rem 2rem; max-width:880px; margin:0 auto; }
+  h1 { font-size:2rem; margin:0 0 .25rem; }
+  .tagline { font-size:1.15rem; color:var(--muted); margin:.25rem 0 1rem; }
+  .links a { color:var(--accent); margin-right:1rem; }
+  main { max-width:880px; margin:0 auto; padding:0 1.25rem 3rem; }
+  h2 { font-size:1.3rem; margin:2rem 0 .5rem; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1rem; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:1.1rem 1.2rem; }
+  .card h3 { margin:0 0 .35rem; font-size:1.05rem; }
+  .card p { margin:.35rem 0; color:var(--muted); font-size:.95rem; }
+  .card .stack { font-size:.85rem; color:var(--ink); }
+  .card a { color:var(--accent); font-weight:600; text-decoration:none; }
+  .card a:hover { text-decoration:underline; }
+  footer { max-width:880px; margin:0 auto; padding:0 1.25rem 2.5rem; color:var(--muted); font-size:.85rem; }
+</style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <h1>Austin McDaniel</h1>
-      <p class="tagline">Learning to build useful things with code, data and self-hosted tech.</p>
-      <nav>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
-
-    <section id="about">
-      <h2>About</h2>
-      <p>
-        Hi, I'm Austin. I'm studying informatics and teaching myself to code.
-        I like understanding how systems work, from healthcare data to my own
-        home server.
-      </p>
+<header>
+  <h1>Austin McDaniel</h1>
+  <p class="tagline">Clinical informatics — I automate clinical reporting and run my own infrastructure with Python.</p>
+  <p class="links">
+    <a href="https://github.com/Knok-exe">GitHub — Knok-exe</a>
+  </p>
+  <p>Clinical Informatics analyst at a small hospital (Cerner / Oracle Health), studying informatics and finishing a CCMA program in December 2026. I build genuinely useful tools, not toy exercises — and I learn by building from the basics.</p>
+</header>
+<main>
+  <h2>Projects</h2>
+  <div class="grid">
+    <section class="card">
+      <h3>FHIR Patient Timeline CLI</h3>
+      <p>Given a patient, pulls their record from a public FHIR test server and prints a chronological timeline — encounters, vitals, labs, problems, meds — as a terminal table with Markdown/CSV export.</p>
+      <p class="stack">Python (stdlib) · FHIR R4 · SondaHub synthetic data</p>
+      <a href="https://github.com/Knok-exe/fhir-timeline-cli">View on GitHub →</a>
     </section>
-
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>Home Lab &amp; Self-Hosting</h3>
-          <p>
-            A NAS running Docker containers, with private remote access through
-            Tailscale and a Cloudflare Tunnel for public services.
-          </p>
-          <div class="tags">
-            <span class="tag">Docker</span>
-            <span class="tag">Tailscale</span>
-            <span class="tag">Cloudflare</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3>Workflow Automation</h3>
-          <p>
-            Self-hosted n8n workflows that connect apps and automate routine tasks.
-          </p>
-          <div class="tags">
-            <span class="tag">n8n</span>
-            <span class="tag">Automation</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3>Your next project</h3>
-          <p>Add a title, a one-line description, and a link to the GitHub repo.</p>
-          <div class="tags">
-            <span class="tag">Coming soon</span>
-          </div>
-        </div>
-      </div>
+    <section class="card">
+      <h3>FHIR Care-Gap Dashboard</h3>
+      <p>Web dashboard over the same FHIR data: charts vitals over time and flags care gaps — e.g. a diabetic with no HbA1c in 6+ months — with the rule, the evidence, and a plain-English explanation next to each flag.</p>
+      <p class="stack">Streamlit · FastAPI · pandas · Plotly · synthetic data</p>
+      <a href="https://fhir-care-gaps.streamlit.app">Live demo →</a><br>
+      <a href="https://github.com/Knok-exe/fhir-care-gap-dashboard">View on GitHub →</a>
     </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>
-        Find my code on
-        <a href="https://github.com/Knok-exe" target="_blank" rel="noopener">GitHub</a>.
-      </p>
+    <section class="card">
+      <h3>Report Automation Kit</h3>
+      <p>A scheduled reporting pipeline on synthetic data that mirrors real clinical reporting work: parameterized cohort queries in SQL/DuckDB, formatted Excel workbooks and PDF summaries, with run history and a “what changed since last run” diff.</p>
+      <p class="stack">Python · SQL/DuckDB · Excel/PDF · Synthea synthetic data</p>
+      <a href="https://github.com/Knok-exe/report-automation-kit">View on GitHub →</a>
     </section>
-
-    <footer>
-      &copy; <span id="year"></span> Austin McDaniel
-    </footer>
+    <section class="card">
+      <h3>HL7v2 → FHIR Converter</h3>
+      <p>Reads synthetic HL7v2 messages (ADT, ORU, SIU, ORM), parses them properly, maps them to FHIR R4 resources, validates them, and routes malformed messages to a dead-letter queue with a clear error — never silently dropping data.</p>
+      <p class="stack">Python · hl7apy · fhir.resources · FHIR R4</p>
+      <a href="https://github.com/Knok-exe/hl7v2-to-fhir">View on GitHub →</a>
+    </section>
+    <section class="card">
+      <h3>WC Readiness — RESET Phase 0</h3>
+      <p>Command-line tool that builds a workers' comp "readiness card" for one patient visit: reads Oracle Health's public FHIR sandbox, merges in a synthetic HL7v2 registration message, lists what's missing (employer, injury date, carrier, claim number), and keeps a coordinator worklist in SQLite.</p>
+      <p class="stack">Python · FHIR R4 · HL7v2 · SQLite · synthetic data</p>
+      <a href="https://github.com/Knok-exe/wc-readiness">View on GitHub →</a>
+    </section>
   </div>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <h2>What I’m working on next</h2>
+  <p>Either a SMART-on-FHIR app (full OAuth/PKCE launch against the SMART and Cerner sandboxes) or the Homelab Health Reporter — one script that pulls Proxmox, Docker, AdGuard, Jellyfin and Home Assistant status into a daily report. The homelab one waits until the homelab is fully set up.</p>
+  <p>All health data in these projects is synthetic — never real patient data.</p>
+</main>
+<footer>
+  <p>Built as a static site. Deployed with Cloudflare Pages from a GitHub repo, on austinmcd.com.</p>
+</footer>
 </body>
 </html>
